@@ -74,7 +74,7 @@ router.get("/user", async (req, res) => {
 
         // Construct the SQL query to search for user profiles using the zipcode column
         let sql = `
-        SELECT u.username, up.display_name, up.profile_picture, up.zipcode, lll.latitude, lll.longitude
+        SELECT u.username, up.display_name, up.profile_picture, up.zip, lll.latitude, lll.longitude
         FROM user_account u
         JOIN user_profile up ON u.user_id = up.user_id
         JOIN location_lat_long lll ON u.user_id = lll.user_id
