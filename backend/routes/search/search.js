@@ -6,7 +6,7 @@ const geolib = require('geolib');
 router.get("/pet", async (req, res) => {
     const { petId = "", petName = "", distance = ""} = req.query;
 
-    const searcherID = req.userID;
+    const searcherID = req.body.userID;
     
     if (!searcherID) {
         return res.status(400).send("User ID is required for searching pet profiles.");
